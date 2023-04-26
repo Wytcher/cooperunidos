@@ -1,12 +1,48 @@
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-  <a [routerLink]="['/']">Página Inicial</a>
-  <a [routerLink]="['/cadastrar']">Cadastrar</a>
-  <a href="#">Consultar</a>
-</div>
+<div class="dash">
+  <aside class="dash_sidebar box-shadow" *ngIf="isOpen" [@sideMenu]>
 
-<div id="main">
-  <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; Menu</span>
-</div>
+    <article class="dash_sidebar_user">
+      <p (click)="isOpen = !isOpen" class="close">X</p>
+    </article>
 
-<router-outlet></router-outlet>
+    <ul class="dash_sidebar_nav">
+      <li class="dash_sidebar_nav_item"><a class="icon-dashboard">Dashboard</a>
+      </li>
+      <li class="dash_sidebar_nav_item "><a class="icon-users">Fornecedores</a>
+        <ul class="dash_sidebar_nav_submenu">
+          <li class=""><a [routerLink]="['/cadastrar']">Ver Todos</a></li>
+          <li class=""><a [routerLink]="['/cadastrar']">Cadastrar novo</a></li>
+        </ul>
+      </li>
+      <li class="dash_sidebar_nav_item "><a class="icon-wrench">Compradores</a>
+        <ul class="dash_sidebar_nav_submenu">
+          <li class=""><a>Ver Todos</a></li>
+          <li class=""><a>Cadastrar novo</a></li>
+        </ul>
+      </li>
+      <li class="dash_sidebar_nav_item "><a class="icon-book">Vendas</a>
+        <ul class="dash_sidebar_nav_submenu">
+          <li class=""><a>Ver Todos</a></li>
+          <li class=""><a>Vendas em andamento</a></li>
+          <li class=""><a>Pesquisar por Cliente</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
+  <section class="dash_content">
+
+    <div class="dash_userbar">
+      <div class="dash_userbar_box">
+        <div class="dash_userbar_box_content">
+          <h1 class="transition">
+            <mat-icon class="bx bx-menu" (click)="isOpen = !isOpen">menu</mat-icon>
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+
+  </section>
+</div>

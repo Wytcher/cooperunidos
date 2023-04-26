@@ -1,24 +1,51 @@
 import { Component, OnInit } from '@angular/core';
+import {transition, trigger, useAnimation} from "@angular/animations";
+import {SidebarCloseAnimation, SidebarOpenAnimation} from "./animations";
+
+const animationParams = {
+  menuWidth: "260px",
+  animationStyle: "500ms ease"
+};
 
 @Component({
   selector: 'app-web',
   templateUrl: './web.component.html',
-  styleUrls: ['./web.component.css']
+  styleUrls: ['./web.component.css'],
+  animations: [
+    trigger("sideMenu", [
+      transition(":enter", [
+        useAnimation(SidebarOpenAnimation, {
+          params: {
+            ...animationParams
+          }
+        })
+      ]),
+      transition(":leave", [
+        useAnimation(SidebarCloseAnimation, {
+          params: {
+            ...animationParams
+          }
+        })
+      ])
+    ])
+  ]
 })
 export class WebComponent implements OnInit {
+
+  isOpen = false
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  openNav() {
-    document.getElementById("mySidenav")!.style.width = "250px";
-    document.getElementById("main")!.style.marginLeft = "250px";
+  showMenu() {
+    let sidebar = document.querySelector('.sidebar');
+    sidebar?.classList.toggle('close');
   }
 
-  closeNav() {
-    document.getElementById("mySidenav")!.style.width = "0";
-    document.getElementById("main")!.style.marginLeft= "0";
+  dropdownMenu(e: HTMLElement) {
+    let arrowParent = e.parentElement?.parentElement;
+    arrowParent?.classList.toggle('showMenu');
   }
 }
