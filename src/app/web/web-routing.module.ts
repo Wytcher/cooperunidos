@@ -12,6 +12,11 @@ const routes: Routes = [
     path: "cadastrar",
     loadChildren: () => import("./cadastrar/cadastrar.module").then(m => m.CadastrarModule),
     component: WebComponent
+  },
+  {
+    path: "fornecedores",
+    loadChildren: () => import("./fornecedores/fornecedores.module").then(m => m.FornecedoresModule),
+    component: WebComponent
   }
 ];
 
