@@ -1,7 +1,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-  <a href="index.html">Página Inicial</a>
-  <a href="cadastrar.html">Cadastrar</a>
+  <a [routerLink]="['/']">Página Inicial</a>
+  <a [routerLink]="['/cadastrar']">Cadastrar</a>
   <a href="#">Consultar</a>
 </div>
 
