@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FornecedoresRoutingModule } from './fornecedores-routing.module';
 import { FornecedoresComponent } from './fornecedores/fornecedores.component';
 import { CadastrarFornecedoresComponent } from './cadastrar-fornecedores/cadastrar-fornecedores.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CadastrarFornecedoresComponent } from './cadastrar-fornecedores/cadastr
   ],
   imports: [
     CommonModule,
-    FornecedoresRoutingModule
+    FornecedoresRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class FornecedoresModule { }
