@@ -1,0 +1,58 @@
+<div class="main_content">
+  <div class="main_content_header">
+    <div class="filter">
+      <form class="filter_form">
+        <input
+          type="text"
+          class="field"
+          placeholder="Nome"
+        />
+        <button class="button">
+          <mat-icon class="icon">filter_list</mat-icon>
+        </button>
+      </form>
+    </div>
+    <div class="create">
+      <span class="button form transition">
+        <mat-icon class="icon">add_circle</mat-icon>
+        <a [routerLink]="['/vendas/cadastrar']">Cadastrar</a>
+      </span>
+    </div>
+  </div>
+  <div class="main_content_display">
+    <div class="header">
+      <div class="id_sale">
+        <p>ID VENDA</p>
+      </div>
+      <div class="id_buyer">
+        <p>ID COMPRADOR</p>
+      </div>
+      <div class="responsible">
+        <p>RESPONSÁVEL</p>
+      </div>
+      <div class="value">
+        <p>VALOR</p>
+      </div>
+      <div class="due_at">
+        <p>DATA</p>
+      </div>
+    </div>
+    <div class="item" *ngFor="let sale of sales">
+      <div class="id_sale">
+        <a href="#" class="main">{{ sale.id }}</a>
+      </div>
+      <div class="id_buyer">
+        <a href="#" class="main">{{ sale.id_comprador }}</a>
+      </div>
+      <div class="responsible">
+        <a href="#" class="main">{{ sale.responsavel }}</a>
+      </div>
+      <div class="value">
+        <p>{{ sale.valor | currency: 'BRL'  }}</p>
+      </div>
+      <div class="due_at">
+        <p>{{ sale.data_venda| date: "dd/MM/yyyy" }}</p>
+      </div>
+    </div>
+  </div>
+</div>

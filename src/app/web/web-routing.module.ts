@@ -22,6 +22,11 @@ const routes: Routes = [
     path: "compradores",
     loadChildren: () => import("./compradores/compradores.module").then(m => m.CompradoresModule),
     component: WebComponent
+  },
+  {
+    path: "vendas",
+    loadChildren: () => import("./vendas/vendas.module").then(m => m.VendasModule),
+    component: WebComponent
   }
 ];
 

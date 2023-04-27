@@ -1,0 +1,38 @@
+<div class="form-container">
+  <h2>Cadastrar Insumos</h2>
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="fornecedor">Insumo:</label>
+      <select formControlName="id_insumo">
+        <option *ngFor="let supplie of supplies" value="{{ supplie.id }}" >
+          {{ supplie.nome_insumo }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="fornecedor">Comprador:</label>
+      <select formControlName="id_comprador">
+        <option *ngFor="let buyer of buyers" value="{{ buyer.id }}" >
+          {{ buyer.nome_empresa }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="weigth">Peso</label>
+      <input type="text" placeholder="Peso" formControlName="peso"/>
+    </div>
+    <div class="form-group">
+      <label for="responsible">Responsável</label>
+      <input type="text" placeholder="Responsável" formControlName="responsavel"/>
+    </div>
+    <div class="form-group">
+      <label for="due_at">Data da venda</label>
+      <input type="text" placeholder="Data da venda" formControlName="data_venda"/>
+    </div>
+    <div class="form-group">
+      <label for="value">Valor</label>
+      <input type="text" placeholder="Value" formControlName="valor"/>
+    </div>
+    <button type="submit" class="submit-button">Cadastrar</button>
+  </form>
+</div>
