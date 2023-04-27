@@ -1,0 +1,149 @@
+.main_content {
+  padding: 40px
+}
+
+.main_content_header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_content_header .filter_form{
+  display: flex;
+  align-items: center;
+}
+
+.filter_form .field{
+  padding: 5px;
+  margin-right: 20px;
+  border-radius: var(--radius-normal);
+  border: 1px solid var(--color-dark-gray);
+}
+
+.filter_form .button{
+  color: var(--color-default);
+  background-color: var(--color-default);
+  padding: 4px 8px;
+  border-radius: var(--radius-normal);
+}
+
+.filter_form .button .icon{
+  font-size: var(--font-medium);
+  color: #ffffff;
+  height: auto;
+  width: auto;
+  margin-top: 2px;
+}
+
+.create .button{
+  background-color: transparent;
+  border: 1px solid var(--color-default);
+  border-radius: var(--radius-normal);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-default);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.create .button.form{
+  border: 1px solid #6194a0;;
+  color: #6194a0;;
+}
+
+.create .button.form:hover{
+  background-color: #6194a0;;
+}
+
+.create .button:hover{
+  background-color: var(--color-default);
+  color:  #fff;
+}
+
+.create .button a {
+  text-decoration: none;
+  color: #6194a0;;
+}
+
+.create .button a:hover {
+  text-decoration: none;
+  color: #fff;;
+}
+
+.create .button .icon{
+  height: auto;
+  width: auto;
+  font-size: var(--font-min);
+  margin-right: 5px;
+  margin-top: 1px;
+}
+
+.create .button .text{
+  font-size: var(--font-small);
+  font-weight: 600;
+}
+
+.main_content_display{
+  margin-top: 30px;
+}
+
+.main_content_display .header{
+  display: flex;
+  padding: 10px 20px;
+  font-size: var(--font-small);
+  color: var(--color-dark-gray);
+  margin-bottom: 10px;
+}
+
+.header .name{
+  flex-basis: 40%;
+}
+.header .company{
+  flex-basis: 20%;
+  text-align: center;
+}
+.header .createdAt{
+  flex-basis: 40%;
+  text-align: center;
+}
+
+.main_content_display .item{
+  display: flex;
+  padding: 20px;
+  background-color: var(--color-secondary);
+  font-size: var(--font-small);
+}
+
+.main_content_display .item:nth-child(odd){
+  background-color: #fbfbfb;
+}
+
+.item .name{
+  flex-basis: 30%;
+}
+
+.item .name .main{
+  color: #6194a0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.item .name{
+  flex-basis: 40%;
+  text-align: start;
+}
+.item .company{
+  flex-basis: 20%;
+  text-align: center;
+}
+.item .createdAt{
+  flex-basis: 40%;
+  text-align: center;
+}
+
+.pagination_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}

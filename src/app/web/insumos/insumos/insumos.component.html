@@ -1,0 +1,43 @@
+<div class="main_content">
+  <div class="main_content_header">
+    <div class="filter">
+      <form class="filter_form">
+        <input
+          type="text"
+          class="field"
+          placeholder="Nome do insumo"
+        />
+        <button class="button">
+          <mat-icon class="icon">filter_list</mat-icon>
+        </button>
+      </form>
+    </div>
+    <div class="create">
+      <span class="button form transition">
+        <mat-icon class="icon">add_circle</mat-icon>
+        <a [routerLink]="['/insumos/cadastrar']">Cadastrar</a>
+      </span>
+    </div>
+  </div>
+  <div class="main_content_display">
+    <div class="header">
+      <div class="name">
+        <p>Nome insumo</p>
+      </div>
+      <div class="company">
+        <p>Id fornecedor</p>
+      </div>
+    </div>
+    <div class="item" *ngFor="let supplie of supplies">
+      <div class="name">
+        <a href="#" class="main">{{ supplie.nome_insumo }}</a>
+      </div>
+      <div class="company">
+        <p>{{ supplie.id_fornecedor }}</p>
+      </div>
+      <div class="createdAt">
+        <p>{{ supplie.created_at| date: "dd/MM/yyyy" }}</p>
+      </div>
+    </div>
+  </div>
+</div>

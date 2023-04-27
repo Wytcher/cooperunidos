@@ -9,13 +9,13 @@ const routes: Routes = [
     component: WebComponent
   },
   {
-    path: "cadastrar",
-    loadChildren: () => import("./cadastrar/cadastrar.module").then(m => m.CadastrarModule),
+    path: "fornecedores",
+    loadChildren: () => import("./fornecedores/fornecedores.module").then(m => m.FornecedoresModule),
     component: WebComponent
   },
   {
-    path: "fornecedores",
-    loadChildren: () => import("./fornecedores/fornecedores.module").then(m => m.FornecedoresModule),
+    path: "insumos",
+    loadChildren: () => import("./insumos/insumos.module").then(m => m.InsumosModule),
     component: WebComponent
   }
 ];
