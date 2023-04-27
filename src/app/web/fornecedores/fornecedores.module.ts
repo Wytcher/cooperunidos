@@ -5,6 +5,7 @@ import { FornecedoresRoutingModule } from './fornecedores-routing.module';
 import { FornecedoresComponent } from './fornecedores/fornecedores.component';
 import { CadastrarFornecedoresComponent } from './cadastrar-fornecedores/cadastrar-fornecedores.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/shared/modules/material/material.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FornecedoresRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class FornecedoresModule { }

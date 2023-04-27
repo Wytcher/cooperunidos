@@ -5,6 +5,10 @@ import { CadastrarFornecedoresComponent } from './cadastrar-fornecedores/cadastr
 
 const routes: Routes = [
   {
+    path: '',
+    component: FornecedoresComponent
+  },
+  {
     path: 'cadastrar',
     component: CadastrarFornecedoresComponent
   }

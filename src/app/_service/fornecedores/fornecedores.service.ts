@@ -12,8 +12,11 @@ export class FornecedoresService {
 
   constructor(private http: HttpClient) { }
 
-  createInvoice(data: FormData): Observable<any> {
-    return this.http.post<any>(`${url}/fornecedores/criar`, data);
+  createSuplier(data: FormData): Observable<any> {
+    return this.http.post<any>(`${url}/fornecedores/cria`, data);
   }
 
+  getSupliers(): Observable<any> {
+    return this.http.get<any>(`${url}/fornecedores/busca`)
+  }
 }

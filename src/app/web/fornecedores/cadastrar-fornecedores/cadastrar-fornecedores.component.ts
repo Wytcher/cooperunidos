@@ -8,6 +8,7 @@ import { FornecedoresService } from 'src/app/_service/fornecedores/fornecedores.
   styleUrls: ['./cadastrar-fornecedores.component.css']
 })
 export class CadastrarFornecedoresComponent implements OnInit {
+  createMessage: string | undefined
   formData: FormGroup
 
   constructor(private formBuilder: FormBuilder, private fornecedorService: FornecedoresService) {
@@ -21,6 +22,8 @@ export class CadastrarFornecedoresComponent implements OnInit {
   }
 
   onSubmit(){
-    this.fornecedorService.createInvoice(this.formData.value)
+    this.fornecedorService.createSuplier(this.formData.value).subscribe((data) => {
+      console.log(data)
+    })
   }
 }
