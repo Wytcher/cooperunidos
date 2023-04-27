@@ -17,6 +17,11 @@ const routes: Routes = [
     path: "insumos",
     loadChildren: () => import("./insumos/insumos.module").then(m => m.InsumosModule),
     component: WebComponent
+  },
+  {
+    path: "compradores",
+    loadChildren: () => import("./compradores/compradores.module").then(m => m.CompradoresModule),
+    component: WebComponent
   }
 ];
 
