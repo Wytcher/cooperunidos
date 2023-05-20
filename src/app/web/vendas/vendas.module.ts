@@ -6,6 +6,7 @@ import { VendasComponent } from './vendas/vendas.component';
 import { CadastrarVendasComponent } from './cadastrar-vendas/cadastrar-vendas.component';
 import { MaterialModule } from 'src/app/shared/modules/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     VendasRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ]
 })
 export class VendasModule { }

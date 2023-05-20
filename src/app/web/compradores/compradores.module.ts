@@ -6,6 +6,7 @@ import { CompradoresComponent } from './compradores/compradores.component';
 import { CadastrarCompradoresComponent } from './cadastrar-compradores/cadastrar-compradores.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/shared/modules/material/material.module';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MaterialModule } from 'src/app/shared/modules/material/material.module'
     CommonModule,
     CompradoresRoutingModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    ToastrModule.forRoot()
   ]
 })
 export class CompradoresModule { }

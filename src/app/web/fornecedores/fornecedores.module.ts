@@ -6,6 +6,7 @@ import { FornecedoresComponent } from './fornecedores/fornecedores.component';
 import { CadastrarFornecedoresComponent } from './cadastrar-fornecedores/cadastrar-fornecedores.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/shared/modules/material/material.module';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MaterialModule } from 'src/app/shared/modules/material/material.module'
     CommonModule,
     FornecedoresRoutingModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    ToastrModule.forRoot()
   ]
 })
 export class FornecedoresModule { }

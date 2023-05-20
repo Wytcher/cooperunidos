@@ -6,6 +6,7 @@ import { Insumo } from 'src/app/_model/insumos/insumo.model';
 import { CompradoresService } from 'src/app/_service/compradores/compradores.service';
 import { InsumosService } from 'src/app/_service/insumos/insumos.service';
 import { VendasService } from 'src/app/_service/vendas/vendas.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cadastrar-vendas',
@@ -21,7 +22,8 @@ export class CadastrarVendasComponent implements OnInit {
     private buyerService: CompradoresService,
     private suppliesService: InsumosService,
     private formBuilder: FormBuilder,
-    private salesService: VendasService
+    private salesService: VendasService,
+    private toastr: ToastrService
   ) {
     this.formData = this.formBuilder.group({
       id_insumo: '',
@@ -50,12 +52,34 @@ export class CadastrarVendasComponent implements OnInit {
     this.formData
       .get('data_venda')
       ?.setValue(
-        moment(this.formData.get('data_venda')?.value)
-          .format('YYYY-MM-DDTHH:mm:ss')
+        moment(this.formData.get('data_venda')?.value).format(
+          'YYYY-MM-DDTHH:mm:ss'
+        )
       );
 
-    this.salesService.createSale(this.formData.value).subscribe((data) => {
-      console.log(data)
-    })
+    this.salesService.createSale(this.formData.value).subscribe({
+      next: (data) => {
+        if (data) {
+          this.toastr.success(
+            'Venda cadastrada com sucesso',
+            'Sucesso ao cadastrar'
+          );
+        }
+      },
+      error: (error) => {
+        if (error.status === 422) {
+          this.toastr.error(
+            'Os campos estão incorretos, favor verificar.',
+            'Erro ao cadastrar'
+          );
+        }
+        if (error.status === 500) {
+          this.toastr.error(
+            'Entre em contato com os administradores',
+            'Erro interno'
+          );
+        }
+      },
+    });
   }
 }
