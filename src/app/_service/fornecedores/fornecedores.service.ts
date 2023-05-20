@@ -19,4 +19,16 @@ export class FornecedoresService {
   getSupliers(): Observable<any> {
     return this.http.get<any>(`${url}/fornecedores/busca`)
   }
+
+  getSuplier(id: number): Observable<any> {
+    return this.http.get<any>(`${url}/fornecedores/busca/${id}`)
+  }
+
+  updateSuplier(id: number, data: FormData): Observable<any> {
+    return this.http.put<any>(`${url}/fornecedores/atualiza/${id}`, data);
+  }
+
+  deleteSuplier(id: number): Observable<any> {
+    return this.http.delete<any>(`${url}/fornecedores/deleta/${id}`)
+  }
 }

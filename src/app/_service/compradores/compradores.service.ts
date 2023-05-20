@@ -19,4 +19,16 @@ export class CompradoresService {
   getBuyers(): Observable<any> {
     return this.http.get<any>(`${url}/compradores/busca`)
   }
+
+  getBuyer(id: number): Observable<any> {
+    return this.http.get<any>(`${url}/compradores/busca/${id}`)
+  }
+
+  updateBuyer(id: number, data: FormData): Observable<any> {
+    return this.http.put<any>(`${url}/compradores/atualiza/${id}`, data)
+  }
+
+  deleteBuyer(id: number): Observable<any> {
+    return this.http.delete<any>(`${url}/compradores/deleta/${id}`)
+  }
 }

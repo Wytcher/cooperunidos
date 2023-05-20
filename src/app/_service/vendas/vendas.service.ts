@@ -19,4 +19,16 @@ export class VendasService {
   getSales(): Observable<any> {
     return this.http.get<any>(`${url}/vendas/busca`)
   }
+
+  getSale(id: number): Observable<any> {
+    return this.http.get<any>(`${url}/vendas/busca/${id}`)
+  }
+
+  updateSale(id: number, data: FormData): Observable<any> {
+    return this.http.post<any>(`${url}/vendas/atualiza/${id}`, data)
+  }
+
+  deleteSale(id: number): Observable<any> {
+    return this.http.delete<any>(`${url}/vendas/deleta/${id}`)
+  }
 }

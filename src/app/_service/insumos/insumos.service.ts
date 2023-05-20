@@ -19,4 +19,16 @@ export class InsumosService {
   getSupplies(): Observable<any> {
     return this.http.get<any>(`${url}/insumos/busca`)
   }
+
+  getSupplie(id: number): Observable<any> {
+    return this.http.get<any>(`${url}/insumos/busca/${id}`)
+  }
+
+  updateSupplies(id: number, data: FormData): Observable<any> {
+    return this.http.put<any>(`${url}/insumos/atualiza/${id}`, data)
+  }
+
+  deleteSupplie(id: number): Observable<any> {
+    return this.http.delete<any>(`${url}/insumos/deleta/${id}`)
+  }
 }
