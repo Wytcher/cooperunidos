@@ -35,4 +35,24 @@ export class CompradoresComponent implements OnInit {
       }
     });
   }
+
+  deleteBuyer(id: number) {
+    if(window.confirm('Você tem certeza que deseja deletar esse comprador?')) {
+      this.buyerService.deleteBuyer(id).subscribe({
+        next: (data) => {
+          if (data) {
+            this.toastr.success('Comprador deletado com sucesso', 'Sucesso ao deletar')
+          }
+        },
+        error: (error) => {
+          if (error) {
+            this.toastr.error(
+              'Ocorreu um erro ao deletar o comprador, entre em contato com os administradores',
+              'Erro interno'
+            );
+          }
+        }
+      })
+    }
+  }
 }
