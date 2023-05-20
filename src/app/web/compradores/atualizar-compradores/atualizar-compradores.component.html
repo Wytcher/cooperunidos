@@ -1,0 +1,10 @@
+<div class="form-container">
+  <h2>Cadastrar Compradores</h2>
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="company_name">Nome empresa:</label>
+      <input type="text" id="company_name" name="company_name" required formControlName="nome_empresa">
+    </div>
+    <button type="submit" class="submit-button">Atualizar</button>
+  </form>
+</div>
