@@ -12,7 +12,7 @@ export class FornecedoresComponent implements OnInit {
   supliers: Fornecedor[] = [];
 
   constructor(
-    private fornecedorService: FornecedoresService,
+    private supplierService: FornecedoresService,
     private toastr: ToastrService
   ) {}
 
@@ -21,7 +21,7 @@ export class FornecedoresComponent implements OnInit {
   }
 
   loadSupliers() {
-    this.fornecedorService.getSupliers().subscribe({
+    this.supplierService.getSupliers().subscribe({
       next: (data) => {
         this.supliers = data.mensagem;
       },
@@ -34,5 +34,26 @@ export class FornecedoresComponent implements OnInit {
         }
       }
     });
+  }
+
+  deleteSupplier(id: number) {
+    if(window.confirm('Você tem certeza que deseja deletar esse Fornecedor?')) {
+      console.log(id)
+      this.supplierService.deleteSuplier(id).subscribe({
+        next: (data) => {
+          if (data) {
+            this.toastr.success('Fornecedor deletado com sucesso', 'Sucesso ao deletar')
+          }
+        },
+        error: (error) => {
+          if (error) {
+            this.toastr.error(
+              'Ocorreu um erro ao deletar o Fornecedor, entre em contato com os administradores',
+              'Erro interno'
+            );
+          }
+        }
+      })
+    }
   }
 }

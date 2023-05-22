@@ -48,10 +48,15 @@
         <a class="main">{{ sale.responsavel }}</a>
       </div>
       <div class="value">
-        <p>{{ sale.valor | currency: 'BRL'  }}</p>
+        <span>{{ sale.valor | currency: 'BRL'  }}</span>
       </div>
       <div class="due_at">
-        <p>{{ sale.data_venda| date: "dd/MM/yyyy" }}</p>
+        <span>{{ sale.data_venda| date: "dd/MM/yyyy" }}</span>
+      </div>
+      <div class="delete">
+        <span (click)="deleteSale(sale.id)">
+          <mat-icon class="icon">delete</mat-icon>
+        </span>
       </div>
     </div>
   </div>

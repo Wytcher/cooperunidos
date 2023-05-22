@@ -35,4 +35,24 @@ export class InsumosComponent implements OnInit {
       }
     });
   }
+
+  deleteSupplie(id: number) {
+    if(window.confirm('Você tem certeza que deseja deletar esse Insumo?')) {
+      this.supplieService.deleteSupplie(id).subscribe({
+        next: (data) => {
+          if (data) {
+            this.toastr.success('Insumo deletado com sucesso', 'Sucesso ao deletar')
+          }
+        },
+        error: (error) => {
+          if (error) {
+            this.toastr.error(
+              'Ocorreu um erro ao deletar o Insumo, entre em contato com os administradores',
+              'Erro interno'
+            );
+          }
+        }
+      })
+    }
+  }
 }

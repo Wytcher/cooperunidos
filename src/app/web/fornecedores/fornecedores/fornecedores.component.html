@@ -42,6 +42,11 @@
       <div class="createdAt">
         <p>{{ suplier.created_at| date: "dd/MM/yyyy" }}</p>
       </div>
+      <div class="delete">
+        <span (click)="deleteSupplier(suplier.id)">
+          <mat-icon class="icon">delete</mat-icon>
+        </span>
+      </div>
     </div>
   </div>
 </div>

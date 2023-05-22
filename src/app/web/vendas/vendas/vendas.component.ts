@@ -35,4 +35,24 @@ export class VendasComponent implements OnInit {
       },
     });
   }
+
+  deleteSale(id: number) {
+    if(window.confirm('Você tem certeza que deseja deletar essa Venda?')) {
+      this.salesService.deleteSale(id).subscribe({
+        next: (data) => {
+          if (data) {
+            this.toastr.success('Venda deletado com sucesso', 'Sucesso ao deletar')
+          }
+        },
+        error: (error) => {
+          if (error) {
+            this.toastr.error(
+              'Ocorreu um erro ao deletar a Venda, entre em contato com os administradores',
+              'Erro interno'
+            );
+          }
+        }
+      })
+    }
+  }
 }

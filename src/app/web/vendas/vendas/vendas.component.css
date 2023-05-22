@@ -120,6 +120,7 @@
   padding: 20px;
   background-color: var(--color-secondary);
   font-size: var(--font-small);
+  position: relative;
 }
 
 .main_content_display .item:nth-child(odd){
@@ -156,7 +157,18 @@
   flex-basis: 20%;
   text-align: center;
 }
-
+.item .delete{
+  position: absolute;
+  right: 20px;
+  padding: 0;
+}
+.item .delete > span{
+  text-decoration: none;
+  color: rgb(185, 79, 79);
+}
+.item .delete > span:hover {
+  cursor: pointer;
+}
 .pagination_container{
   width: 100%;
   display: flex;
