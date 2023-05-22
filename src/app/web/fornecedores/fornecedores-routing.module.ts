@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FornecedoresComponent } from './fornecedores/fornecedores.component';
 import { CadastrarFornecedoresComponent } from './cadastrar-fornecedores/cadastrar-fornecedores.component';
+import { AtualizarFornecedoresComponent } from './atualizar-fornecedores/atualizar-fornecedores.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'cadastrar',
     component: CadastrarFornecedoresComponent
+  },
+  {
+    path: 'atualizar/:id',
+    component: AtualizarFornecedoresComponent
   }
 ];
 

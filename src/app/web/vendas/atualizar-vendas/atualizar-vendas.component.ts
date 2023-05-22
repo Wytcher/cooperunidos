@@ -7,23 +7,27 @@ import { CompradoresService } from 'src/app/_service/compradores/compradores.ser
 import { InsumosService } from 'src/app/_service/insumos/insumos.service';
 import { VendasService } from 'src/app/_service/vendas/vendas.service';
 import { ToastrService } from 'ngx-toastr';
+import { Venda } from 'src/app/_model/vendas/venda.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-vendas',
-  templateUrl: './cadastrar-vendas.component.html',
-  styleUrls: ['./cadastrar-vendas.component.css'],
+  templateUrl: './atualizar-vendas.component.html',
+  styleUrls: ['./atualizar-vendas.component.css'],
 })
-export class CadastrarVendasComponent implements OnInit {
+export class AtualizarVendasComponent implements OnInit {
   buyers: Comprador[] = [];
   supplies: Insumo[] = [];
   formData: FormGroup;
+  sale: Venda | undefined;
 
   constructor(
     private buyerService: CompradoresService,
     private suppliesService: InsumosService,
     private formBuilder: FormBuilder,
     private salesService: VendasService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private route: ActivatedRoute
   ) {
     this.formData = this.formBuilder.group({
       id_insumo: '',
@@ -37,6 +41,9 @@ export class CadastrarVendasComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadBuyersAndSupplies();
+    this.route.params.subscribe(params => {
+      this.loadSale(params['id'])
+    })
   }
 
   loadBuyersAndSupplies() {
@@ -48,6 +55,30 @@ export class CadastrarVendasComponent implements OnInit {
     });
   }
 
+  loadSale(id: number) {
+    this.salesService.getSale(id).subscribe({
+      next: (data) => {
+        this.sale = data.mensagem
+        this.formData.get('id_insumo')?.setValue(this.sale?.id_insumo)
+        this.formData.get('id_comprador')?.setValue(this.sale?.id_comprador)
+        this.formData.get('peso')?.setValue(this.sale?.peso)
+        this.formData.get('responsavel')?.setValue(this.sale?.responsavel)
+        this.formData.get('data_venda')?.setValue(moment(this.sale?.data_venda).format(
+          'DD/MM/YYYY'
+        ))
+        this.formData.get('valor')?.setValue(this.sale?.valor)
+      },
+      error: (error) => {
+        if (error) {
+          this.toastr.error(
+            'Ocorreu um erro ao carregar a venda, entre em contato com os administradores',
+            'Erro interno'
+          );
+        }
+      }
+    })
+  }
+
   onSubmit() {
     this.formData
       .get('data_venda')
@@ -57,12 +88,12 @@ export class CadastrarVendasComponent implements OnInit {
         )
       );
 
-    this.salesService.createSale(this.formData.value).subscribe({
+    this.salesService.updateSale(this.sale?.id!,this.formData.value).subscribe({
       next: (data) => {
         if (data) {
           this.toastr.success(
-            'Venda cadastrada com sucesso',
-            'Sucesso ao cadastrar'
+            'Venda atualizada com sucesso',
+            'Sucesso ao atualizada'
           );
         }
       },
@@ -70,7 +101,7 @@ export class CadastrarVendasComponent implements OnInit {
         if (error.status === 422) {
           this.toastr.error(
             'Os campos estão incorretos, favor verificar.',
-            'Erro ao cadastrar'
+            'Erro ao atualizar'
           );
         }
         if (error.status === 500) {

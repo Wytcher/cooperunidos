@@ -1,0 +1,16 @@
+<div class="form-container">
+  <h2>Cadastrar Fornecedores</h2>
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required formControlName="nome">
+    </div>
+    <div class="form-group">
+      <div class="checkbox-group">
+        <input type="checkbox" id="company" name="company" formControlName="empresa">
+        <label for="company">Empresa</label>
+      </div>
+    </div>
+    <button type="submit" class="submit-button">Cadastrar</button>
+  </form>
+</div>

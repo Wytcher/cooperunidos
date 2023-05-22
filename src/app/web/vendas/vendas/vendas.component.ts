@@ -23,7 +23,7 @@ export class VendasComponent implements OnInit {
   loadSales() {
     this.salesService.getSales().subscribe({
       next: (data) => {
-        this.sales = data[0];
+        this.sales = data.mensagem;
       },
       error: (error) => {
         if (error) {

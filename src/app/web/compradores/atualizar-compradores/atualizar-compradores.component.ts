@@ -34,7 +34,7 @@ export class AtualizarCompradoresComponent implements OnInit {
   loadBuyer(id: number) {
     this.buyerService.getBuyer(id).subscribe({
       next: (data) => {
-        this.buyer = data[0]
+        this.buyer = data.mensagem
         this.formData.get('nome_empresa')?.setValue(this.buyer?.nome_empresa)
       },
       error: (error) => {

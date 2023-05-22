@@ -23,7 +23,7 @@ export class FornecedoresComponent implements OnInit {
   loadSupliers() {
     this.fornecedorService.getSupliers().subscribe({
       next: (data) => {
-        this.supliers = data[0];
+        this.supliers = data.mensagem;
       },
       error: (error) => {
         if (error) {

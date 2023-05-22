@@ -23,7 +23,7 @@ export class CompradoresComponent implements OnInit {
   loadBuyers() {
     this.buyerService.getBuyers().subscribe({
       next: (data) => {
-        this.buyers = data[0];
+        this.buyers = data.mensagem;
       },
       error: (error) => {
         if (error) {
@@ -38,6 +38,7 @@ export class CompradoresComponent implements OnInit {
 
   deleteBuyer(id: number) {
     if(window.confirm('Você tem certeza que deseja deletar esse comprador?')) {
+      console.log(id)
       this.buyerService.deleteBuyer(id).subscribe({
         next: (data) => {
           if (data) {

@@ -39,13 +39,13 @@
     </div>
     <div class="item" *ngFor="let sale of sales">
       <div class="id_sale">
-        <a href="#" class="main">{{ sale.id }}</a>
+        <a [routerLink]="['/vendas/atualizar/'+sale.id]" class="main">{{ sale.id }}</a>
       </div>
       <div class="id_buyer">
-        <a href="#" class="main">{{ sale.id_comprador }}</a>
+        <a [routerLink]="['/comprador/atualizar/'+sale.id_comprador]" class="main">{{ sale.id_comprador }}</a>
       </div>
       <div class="responsible">
-        <a href="#" class="main">{{ sale.responsavel }}</a>
+        <a class="main">{{ sale.responsavel }}</a>
       </div>
       <div class="value">
         <p>{{ sale.valor | currency: 'BRL'  }}</p>

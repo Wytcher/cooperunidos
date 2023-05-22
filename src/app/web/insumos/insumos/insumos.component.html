@@ -30,7 +30,7 @@
     </div>
     <div class="item" *ngFor="let supplie of supplies">
       <div class="name">
-        <a href="#" class="main">{{ supplie.nome_insumo }}</a>
+        <a [routerLink]="['/insumos/atualizar/' + supplie.id]" class="main">{{ supplie.nome_insumo }}</a>
       </div>
       <div class="company">
         <p>{{ supplie.id_fornecedor }}</p>

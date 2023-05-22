@@ -25,7 +25,7 @@ export class VendasService {
   }
 
   updateSale(id: number, data: FormData): Observable<any> {
-    return this.http.post<any>(`${url}/vendas/atualiza/${id}`, data)
+    return this.http.put<any>(`${url}/vendas/atualiza/${id}`, data)
   }
 
   deleteSale(id: number): Observable<any> {

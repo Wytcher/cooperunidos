@@ -23,7 +23,7 @@ export class InsumosComponent implements OnInit {
   loadSupplies() {
     this.supplieService.getSupplies().subscribe({
       next: (data) => {
-        this.supplies = data[0];
+        this.supplies = data.mensagem;
       },
       error: (error) => {
         if (error) {
