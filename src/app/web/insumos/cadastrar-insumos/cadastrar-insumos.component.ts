@@ -32,7 +32,7 @@ export class CadastrarInsumosComponent implements OnInit {
 
   loadSupliers() {
     this.suplierService.getSupliers().subscribe((data) => {
-      this.supliers = data[0];
+      this.supliers = data.mensagem;
     });
   }
 

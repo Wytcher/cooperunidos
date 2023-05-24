@@ -26,6 +26,13 @@ export class VendasComponent implements OnInit {
         this.sales = data.mensagem;
       },
       error: (error) => {
+        if (error.status === 404) {
+          this.toastr.info(
+            'Não há vendas cadastradas',
+            'Informação'
+          );
+          return;
+        }
         if (error) {
           this.toastr.error(
             'Ocorreu um erro ao carregar as vendas, entre em contato com os administradores',
@@ -43,6 +50,7 @@ export class VendasComponent implements OnInit {
           if (data) {
             this.toastr.success('Venda deletado com sucesso', 'Sucesso ao deletar')
           }
+          setInterval(() => {window.location.reload()}, 2000)
         },
         error: (error) => {
           if (error) {

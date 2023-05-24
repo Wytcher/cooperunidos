@@ -26,6 +26,13 @@ export class CompradoresComponent implements OnInit {
         this.buyers = data.mensagem;
       },
       error: (error) => {
+        if (error.status === 404) {
+          this.toastr.info(
+            'Não há compradores cadastrados',
+            'Informação'
+          );
+          return;
+        }
         if (error) {
           this.toastr.error(
             'Ocorreu um erro ao carregar os compradores, entre em contato com os administradores',
@@ -44,6 +51,7 @@ export class CompradoresComponent implements OnInit {
           if (data) {
             this.toastr.success('Comprador deletado com sucesso', 'Sucesso ao deletar')
           }
+          setInterval(() => {window.location.reload()}, 2000)
         },
         error: (error) => {
           if (error) {

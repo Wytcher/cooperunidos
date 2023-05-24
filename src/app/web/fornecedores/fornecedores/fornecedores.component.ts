@@ -23,9 +23,23 @@ export class FornecedoresComponent implements OnInit {
   loadSupliers() {
     this.supplierService.getSupliers().subscribe({
       next: (data) => {
+        if (data.status_code === 404) {
+          this.toastr.info(
+            'Não há fornecedores cadastrados',
+            'Informação'
+          );
+          return;
+        }
         this.supliers = data.mensagem;
       },
       error: (error) => {
+        if (error.status === 404) {
+          this.toastr.info(
+            'Não há fornecedores cadastrados',
+            'Informação'
+          );
+          return;
+        }
         if (error) {
           this.toastr.error(
             'Ocorreu um erro ao carregar os fornecedores, entre em contato com os administradores',
@@ -44,6 +58,7 @@ export class FornecedoresComponent implements OnInit {
           if (data) {
             this.toastr.success('Fornecedor deletado com sucesso', 'Sucesso ao deletar')
           }
+          setInterval(() => {window.location.reload()}, 2000)
         },
         error: (error) => {
           if (error) {

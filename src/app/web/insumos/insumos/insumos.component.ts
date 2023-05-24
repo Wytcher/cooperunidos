@@ -23,9 +23,23 @@ export class InsumosComponent implements OnInit {
   loadSupplies() {
     this.supplieService.getSupplies().subscribe({
       next: (data) => {
+        if (data.status_code === 404) {
+          this.toastr.info(
+            'Não há insumos cadastrados',
+            'Informação'
+          );
+          return;
+        }
         this.supplies = data.mensagem;
       },
       error: (error) => {
+        if (error.status === 404) {
+          this.toastr.info(
+            'Não há insumos cadastrados',
+            'Informação'
+          );
+          return;
+        }
         if (error) {
           this.toastr.error(
             'Ocorreu um erro ao carregar os insumos, entre em contato com os administradores',
@@ -43,6 +57,7 @@ export class InsumosComponent implements OnInit {
           if (data) {
             this.toastr.success('Insumo deletado com sucesso', 'Sucesso ao deletar')
           }
+          setInterval(() => {window.location.reload()}, 2000)
         },
         error: (error) => {
           if (error) {
