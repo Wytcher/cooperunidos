@@ -48,7 +48,7 @@ export class VendasComponent implements OnInit {
       this.salesService.deleteSale(id).subscribe({
         next: (data) => {
           if (data) {
-            this.toastr.success('Venda deletado com sucesso', 'Sucesso ao deletar')
+            this.toastr.success('Venda deletada com sucesso', 'Sucesso ao deletar')
           }
           setInterval(() => {window.location.reload()}, 2000)
         },

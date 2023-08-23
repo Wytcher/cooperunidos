@@ -52,10 +52,12 @@ export class CadastrarVendasComponent implements OnInit {
     this.formData
       .get('data_venda')
       ?.setValue(
-        moment(this.formData.get('data_venda')?.value).format(
+        moment(this.formData.get('data_venda')?.value, 'DD/MM/YYYY').format(
           'YYYY-MM-DDTHH:mm:ss'
         )
       );
+
+    console.log(this.formData.get('data_venda')?.value)
 
     this.salesService.createSale(this.formData.value).subscribe({
       next: (data) => {

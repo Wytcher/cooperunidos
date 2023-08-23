@@ -83,7 +83,7 @@ export class AtualizarVendasComponent implements OnInit {
     this.formData
       .get('data_venda')
       ?.setValue(
-        moment(this.formData.get('data_venda')?.value).format(
+        moment(this.formData.get('data_venda')?.value, 'DD/MM/YYYY').format(
           'YYYY-MM-DDTHH:mm:ss'
         )
       );
