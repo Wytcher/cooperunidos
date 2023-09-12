@@ -2,6 +2,7 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  color: var(--font-color-header);
 }
 
 .form-container h2 {
@@ -40,7 +41,7 @@
 .submit-button {
   width: 100%;
   padding: 10px;
-  background-color: #04AA6D;
+  background-color: var(--color-submit-button);
   color: #fff;
   border: none;
   border-radius: 4px;

@@ -16,7 +16,7 @@
   padding: 5px;
   margin-right: 20px;
   border-radius: var(--radius-normal);
-  border: 1px solid var(--color-dark-gray);
+  border: 1px solid var(--font-color-header);
 }
 
 .filter_form .button{
@@ -35,8 +35,8 @@
 }
 
 .create .button{
-  background-color: transparent;
-  border: 1px solid var(--color-default);
+  background-color: var(--button-background-transparent-light);
+  border: 1px solid var(--color-create-button);
   border-radius: var(--radius-normal);
   display: flex;
   align-items: center;
@@ -47,12 +47,12 @@
 }
 
 .create .button.form{
-  border: 1px solid #6194a0;;
-  color: #6194a0;;
+  border: 1px solid var(--color-create-button);
+  color: var(--font-color-create-button);
 }
 
 .create .button.form:hover{
-  background-color: #6194a0;;
+  background-color: var(--color-create-button);
 }
 
 .create .button:hover{
@@ -62,7 +62,7 @@
 
 .create .button a {
   text-decoration: none;
-  color: #6194a0;;
+  color: var(--font-color-create-button);
 }
 
 .create .button a:hover {
@@ -91,7 +91,7 @@
   display: flex;
   padding: 10px 20px;
   font-size: var(--font-small);
-  color: var(--color-dark-gray);
+  color: var(--font-color-header);
   margin-bottom: 10px;
 }
 
@@ -124,7 +124,7 @@
 }
 
 .item .name .main{
-  color: #6194a0;
+  color: var(--font-color-create-button);
   text-decoration: none;
   font-weight: 600;
 }

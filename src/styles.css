@@ -23,31 +23,22 @@
     --font-large: 1.4em;
     --font-max: 2em;
 
-    --color-default: #4a5bda;
-    --color-secondary: #f6f4fc;
-    --color-tertiary: #5f78ed;
+    --color-default: #fbfbfb;
+    --color-secondary: #b9b9b9;
+    --color-content-background: #FFFFFF;
+    --color-create-button: #6194a0;
+    --color-submit-button: #5ea1b1;
 
-    --color-light-gray: #F2F2F2;
-    --color-dark-gray: #A6A6A6;
-    --color-text: #0D0D0D;
+    --font-color-default: #171717;
+    --font-color-hover: #000000;
+    --font-color-contrast: #FFFFFF;
+    --font-color-header: #171717;
 
-    --color-green: #30E3A7;
-    --color-blue: #30BCE3;
-    --color-yellow: #FED02C;
-    --color-red: #CC141F;
+    --font-color-create-button: #6194a0;
 
-    --hover-color-green: #1ea87a;
-    --hover-color-blue: #2796b4;
-    --hover-color-yellow: #be9e28;
-    --hover-color-red: #91171f;
-    --hover-duration: 0.3s;
+    --button-background-transparent-light: transparent;
 
-    --background-light: #ffffff;
-
-    --gradient-green: linear-gradient(to right, #42E695 0%, #3BB2B8 50%, #42E695 100%);
-    --gradient-blue: linear-gradient(to right, #17EAD9 0%, #6078EA 50%, #17EAD9 100%);
-    --gradient-red: linear-gradient(to right, #622744 0%, #C53364 50%, #622744 100%);
-    --gradient-yellow: linear-gradient(to right, #FCE38A 0%, #F38181 50%, #FCE38A 100%);
+    --border-color: #E3E3E3;
 
     --radius-normal: 5px;
     --radius-medium: 10px;
@@ -72,6 +63,56 @@
     --padding-min: 20px;
     --padding-med: 30px;
     --padding-max: 40px;
+}
+
+:root .dark_mode{
+  --font-min: 0.8em;
+  --font-small: 0.875em;
+  --font-normal: 1em;
+  --font-medium: 1.2em;
+  --font-large: 1.4em;
+  --font-max: 2em;
+
+  --color-default: #1E1E1E;
+  --color-secondary: #161414;
+  --color-content-background: #555555;
+  --color-create-button: #0272db;
+  --color-submit-button: #025cb1;
+
+  --font-color-default: #FFFFFF;
+  --font-color-hover: #fbfbfb;
+  --font-color-contrast: #171717;
+  --font-color-header: #fbfbfb;
+
+  --font-color-create-button: #ffffff;
+
+  --button-background-transparent-light: var(--color-create-button);
+
+  --border-color: #2e2d2d;
+
+  --radius-normal: 5px;
+  --radius-medium: 10px;
+  --radius-large: 20px;
+  --radius-round: 50%;
+
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-strong: 600;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  --index-back: -1;
+  --index-fold: 2;
+  --index-menu: 3;
+  --index-modal: 4;
+
+  --margin-min: 20px;
+  --margin-med: 30px;
+  --margin-max: 40px;
+
+  --padding-min: 20px;
+  --padding-med: 30px;
+  --padding-max: 40px;
 }
 
 /*ELEMENTS*/
