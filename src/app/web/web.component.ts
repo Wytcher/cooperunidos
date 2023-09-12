@@ -48,4 +48,8 @@ export class WebComponent implements OnInit {
     let arrowParent = e.parentElement?.parentElement;
     arrowParent?.classList.toggle('showMenu');
   }
+
+  toggleDarkMode() {
+    document.body.classList.toggle('dark_mode')
+  }
 }
