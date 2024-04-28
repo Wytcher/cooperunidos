@@ -124,7 +124,7 @@
 }
 
 .main_content_display .item:nth-child(odd){
-  background-color: #fbfbfb;
+  background-color: var(--color-default);
 }
 
 .item .name{
@@ -140,22 +140,27 @@
 .item .id_sale{
   flex-basis: 20%;
   text-align: start;
+  color: var(--font-color-default);
 }
 .item .id_buyer{
   flex-basis: 20%;
   text-align: center;
+  color: var(--font-color-default);
 }
 .item .responsible{
   flex-basis: 20%;
   text-align: center;
+  color: var(--font-color-default);
 }
 .item .value{
   flex-basis: 20%;
   text-align: center;
+  color: var(--font-color-default);
 }
 .item .due_at{
   flex-basis: 20%;
   text-align: center;
+  color: var(--font-color-default);
 }
 .item .delete{
   position: absolute;

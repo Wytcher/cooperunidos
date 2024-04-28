@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {transition, trigger, useAnimation} from "@angular/animations";
 import {SidebarCloseAnimation, SidebarOpenAnimation} from "./animations";
+import { Router } from '@angular/router';
 
 const animationParams = {
   menuWidth: "260px",
@@ -34,7 +35,7 @@ export class WebComponent implements OnInit {
 
   isOpen = false
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -51,5 +52,10 @@ export class WebComponent implements OnInit {
 
   toggleDarkMode() {
     document.body.classList.toggle('dark_mode')
+  }
+
+  logout() {
+    window.sessionStorage.clear();
+    this.router.navigate(["/"]).then(() => window.location.reload);
   }
 }

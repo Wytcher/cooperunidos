@@ -1,0 +1,17 @@
+<div class="login">
+  <article class="login_box radius">
+      <h1 class="login_box_title">Cooperunidos</h1>
+
+      <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+          <label>
+              <input name="email" type="email" placeholder="Informe seu email" formControlName="email" required/>
+          </label>
+
+          <label>
+              <input name="password" type="password" placeholder="Informe sua senha:" formControlName="password" required/>
+          </label>
+
+          <button class="icon-sign-in transition">Entrar</button>
+      </form>
+  </article>
+</div>

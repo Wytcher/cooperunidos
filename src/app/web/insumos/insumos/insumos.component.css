@@ -116,7 +116,7 @@
 }
 
 .main_content_display .item:nth-child(odd){
-  background-color: #fbfbfb;
+  background-color: var(--color-default);
 }
 
 .item .name{
@@ -132,14 +132,17 @@
 .item .name{
   flex-basis: 40%;
   text-align: start;
+  color: var(--font-color-default);
 }
 .item .company{
   flex-basis: 20%;
   text-align: center;
+  color: var(--font-color-default);
 }
 .item .createdAt{
   flex-basis: 40%;
   text-align: center;
+  color: var(--font-color-default);
 }
 .item .delete{
   position: absolute;

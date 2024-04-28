@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  COOPERUNIDOS_API_URI: "http://143.42.189.52:8000",
+  COOPERUNIDOS_API_URI: "http://apicooperunidos.brazilsouth.cloudapp.azure.com:8000",
 };
 
 /*

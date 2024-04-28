@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { WebRoutingModule } from './web-routing.module';
 import { WebComponent } from './web.component';
-import { MaterialModule } from 'src/app/shared/modules/material/material.module';
+import { MaterialModule } from 'src/app/shared/modules/material/material.module';;
 
 
 @NgModule({
   declarations: [
-    WebComponent
+    WebComponent,
   ],
   imports: [
     CommonModule,
